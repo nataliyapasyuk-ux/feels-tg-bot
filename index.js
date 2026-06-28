@@ -11,7 +11,9 @@ app.use((req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3000;
-const BOT_TOKEN = process.env.BOT_TOKEN || process.env.TELEGRAM_BOT_TOKEN;
+// env на bothost «только для чтения» — поэтому токен задаём прямо тут (fallback).
+// ВНИМАНИЕ: НЕ коммить этот файл с реальным токеном в публичный GitHub-репозиторий!
+const BOT_TOKEN = process.env.BOT_TOKEN || process.env.TELEGRAM_BOT_TOKEN || "8828814061:AAE7tWq08UjDu31VeF8gbBU0itKz45S59-w";
 const EXPECTED_SECRET = process.env.SECRET_KEY || process.env['feels-notify'];
 // Отличия от бота Ноты: бэкенд feels + forum_prefix (можно переопределить env)
 const VPS_NOTIFY_URL = process.env.VPS_NOTIFY_URL || "https://notahub.ru/distrib/database/feels/nt-feels.php";
